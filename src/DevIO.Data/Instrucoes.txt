@@ -1,0 +1,14 @@
+﻿Configurando o mapeamento das entidades para o contexto do banco de dados.
+
+Precisa-se instalar o Microsoft.EntityFrameworkCore -Version 2.2.4 via Package-Manager
+Lembrar de escolher a camada certa! Nesse caso, DevIO.Data
+ - Install-Package Microsoft.EntityFrameworkCore -Version 2.2.4
+
+Para fazermos os mappings, precisamos de um pacote adicional para encontrar as colunas e possamos usar o .HasColumn()
+ - Install-Package Microsoft.EntityFrameworkCore.Relational -Version 2.2.4
+
+Ao criar a Migration, precisamos executar da seguinte maneira
+ - Add-Migration Initial (Tabelas do sistema) -Verbose -Context MeuDbContext
+
+Para criar um script-migration (caso não queira criar o banco após o Add-Migration)
+ - Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 2.2.4
